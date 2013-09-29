@@ -27,9 +27,9 @@ public final class JsMapFromStringTo<V> extends JavaScriptObject implements MapF
   /**
    * Create a new empty map instance.
    */
-  public static native <T> JsMapFromStringTo<T> create() /*-{
-    return Object.create(null);
-  }-*/;
+  public static <T> JsMapFromStringTo<T> create() {
+    return JavaScriptObject.createObject().cast();
+  }
 
   static native boolean hasKey(JavaScriptObject map, String key) /*-{
     var p = @elemental.js.util.JsMapFromStringTo::propertyForKey(Ljava/lang/String;)(key);
@@ -39,7 +39,7 @@ public final class JsMapFromStringTo<V> extends JavaScriptObject implements MapF
   static native <T extends JavaScriptObject> T keys(JavaScriptObject object) /*-{
     var data = [];
     for (var item in object) {
-      if (object.hasOwnProperty(item)) {
+      if (Object.prototype.hasOwnProperty.call(object, item)) {
         var key = @elemental.js.util.JsMapFromStringTo::keyForProperty(Ljava/lang/String;)(item);
         data.push(key);
       }
@@ -55,7 +55,7 @@ public final class JsMapFromStringTo<V> extends JavaScriptObject implements MapF
   static native <T extends JavaScriptObject> T values(JavaScriptObject object) /*-{
     var data = [];
     for (var item in object) {
-      if (object.hasOwnProperty(item)) {
+      if (Object.prototype.hasOwnProperty.call(object, item)) {
         data.push(object[item]);
       }
     }

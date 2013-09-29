@@ -48,9 +48,9 @@ public class JsJsonFactory implements JsonFactory {
     return JsJsonNull.create();
   }
 
-  public native JsonObject createObject() /*-{
-    return Object.create(null);
-  }-*/;
+  public JsonObject createObject() {
+    return JsJsonObject.create();
+  }
 
   @SuppressWarnings({"unchecked"})
   public <T extends JsonValue> T parse(String jsonString) throws JsonException {
@@ -63,11 +63,6 @@ public class JsJsonFactory implements JsonFactory {
 
   private native <T extends JsonValue> T parse0(String jsonString) /*-{
     // assume Chrome, safe and non-broken JSON.parse impl
-    return $wnd.JSON.parse(jsonString, function(key, value) {
-      if (typeof value === 'object') {
-        return value;
-      }
-      return Object(value);
-    });
+    return $wnd.JSON.parse(jsonString);
   }-*/;
 }

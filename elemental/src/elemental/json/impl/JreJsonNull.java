@@ -60,6 +60,6 @@ public class JreJsonNull extends JreJsonValue implements JsonNull {
   }
 
   public String toJson() {
-    return null;
+    return asString();
   }
 }

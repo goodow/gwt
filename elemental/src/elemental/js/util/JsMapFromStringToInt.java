@@ -27,9 +27,9 @@ public final class JsMapFromStringToInt extends JavaScriptObject implements MapF
   /**
    * Create a new empty map instance.
    */
-  public static native <T> JsMapFromStringToInt create() /*-{
-    return Object.create(null);
-  }-*/;
+  public static <T> JsMapFromStringToInt create() {
+    return JavaScriptObject.createObject().cast();
+  }
 
   protected JsMapFromStringToInt() {
   }

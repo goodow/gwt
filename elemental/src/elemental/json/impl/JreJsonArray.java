@@ -162,4 +162,12 @@ public class JreJsonArray extends JreJsonValue implements JsonArray {
     }
     visitor.endVisit(this, ctx);
   }
+  
+  @Override
+  public void insert(int index, JsonValue value) {
+    if (value == null) {
+      value = factory.createNull();
+    }
+    arrayValues.add(index, value);
+  }
 }

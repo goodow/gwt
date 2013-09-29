@@ -28,9 +28,9 @@ public final class JsMapFromStringToString extends JavaScriptObject
   /**
    * Create a new empty map instance.
    */
-  public static native <T> JsMapFromStringToString create() /*-{
-    return Object.create(null);
-  }-*/;
+  public static <T> JsMapFromStringToString create() {
+    return JavaScriptObject.createObject().cast();
+  }
 
   protected JsMapFromStringToString() {
   }

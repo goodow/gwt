@@ -28,9 +28,9 @@ public final class JsMapFromStringToNumber extends JavaScriptObject
   /**
    * Create a new empty map instance.
    */
-  public static native <T> JsMapFromStringToNumber create() /*-{
-    return Object.create(null);
-  }-*/;
+  public static <T> JsMapFromStringToNumber create() {
+    return JavaScriptObject.createObject().cast();
+  }
 
   protected JsMapFromStringToNumber() {
   }

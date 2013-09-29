@@ -28,4 +28,9 @@ public abstract class JreJsonValue implements JsonValue {
   public Object toNative() {
     return this;
   }
+  
+  @Override
+  public String toString() {
+    return toJson();
+  }
 }

@@ -15,8 +15,8 @@
  */
 package elemental.json.impl;
 
-import com.google.gwt.regexp.shared.MatchResult;
-import com.google.gwt.regexp.shared.RegExp;
+//import com.google.gwt.regexp.shared.MatchResult;
+//import com.google.gwt.regexp.shared.RegExp;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -325,19 +325,19 @@ public class JsonUtil {
    * @param text       a String on which to perform replacement
    * @param replacer   a callback that maps matched strings into new values
    */
-  private static String replace(RegExp expression, String text,
-      RegExpReplacer replacer) {
-    expression.setLastIndex(0);
-    MatchResult mresult = expression.exec(text);
-    StringBuffer toReturn = new StringBuffer();
-    int lastIndex = 0;
-    while (mresult != null) {
-      toReturn.append(text.substring(lastIndex, mresult.getIndex()));
-      toReturn.append(replacer.replace(mresult.getGroup(0)));
-      lastIndex = mresult.getIndex() + 1;
-      mresult = expression.exec(text);
-    }
-    toReturn.append(text.substring(lastIndex));
-    return toReturn.toString();
-  }
+//  private static String replace(RegExp expression, String text,
+//      RegExpReplacer replacer) {
+//    expression.setLastIndex(0);
+//    MatchResult mresult = expression.exec(text);
+//    StringBuffer toReturn = new StringBuffer();
+//    int lastIndex = 0;
+//    while (mresult != null) {
+//      toReturn.append(text.substring(lastIndex, mresult.getIndex()));
+//      toReturn.append(replacer.replace(mresult.getGroup(0)));
+//      lastIndex = mresult.getIndex() + 1;
+//      mresult = expression.exec(text);
+//    }
+//    toReturn.append(text.substring(lastIndex));
+//    return toReturn.toString();
+//  }
 }

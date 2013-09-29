@@ -99,11 +99,14 @@ class JsonTokenizer {
       }
     }
   }
+  
+  private static final char SINGLE_QUOTE = '\'';
+  private static final char DOUBLE_QUOTE = '"';
 
   String nextString(int startChar) throws JsonException {
     final StringBuffer buffer = new StringBuffer();
     int c = next();
-    assert c == '"' || (lenient && c == '\'');
+    assert c == DOUBLE_QUOTE || (lenient && c == SINGLE_QUOTE);
     while (true) {
       c = next();
       switch (c) {

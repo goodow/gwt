@@ -28,9 +28,9 @@ public final class JsMapFromStringToBoolean extends JavaScriptObject
   /**
    * Create a new empty map instance.
    */
-  public static native <T> JsMapFromStringToBoolean create() /*-{
-    return Object.create(null);
-  }-*/;
+  public static <T> JsMapFromStringToBoolean create() {
+    return JavaScriptObject.createObject().cast();
+  }
 
   protected JsMapFromStringToBoolean() {
   }

@@ -93,4 +93,9 @@ final public class JsJsonArray extends JsJsonValue
   private JsArrayString asJsStringArray() {
     return this.cast();
   }
+  
+  @Override
+  public void insert(int index, JsonValue value) {
+    this.<JsArrayOf> cast().insert(index, value);
+  }
 }
