@@ -100,7 +100,7 @@ public class JsJsonValue extends JavaScriptObject implements JsonValue {
     === @elemental.js.json.JsJsonValue::debox(Lelemental/json/JsonValue;)(value);
   }-*/;
 
-  final public native String toJson() /*-{
+  public native String toJson() /*-{
     // skip hashCode field
     return $wnd.JSON.stringify(this, function(keyName, value) {
         if (keyName == "$H") {

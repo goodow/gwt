@@ -68,17 +68,17 @@ public interface JsonObject extends JsonValue {
   /**
    * Set a given key to the given String value.
    */
-  void put(String key, String value);
+  void put(String key, String string);
 
   /**
    * Set a given key to the given double value.
    */
-  void put(String key, double value);
+  void put(String key, double number);
 
   /**
    * Set a given key to the given boolean value.
    */
-  void put(String key, boolean bool);
+  void put(String key, boolean bool_);
 
   /**
    * Test whether a given key has present.

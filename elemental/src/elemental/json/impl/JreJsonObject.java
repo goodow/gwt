@@ -140,8 +140,8 @@ public class JreJsonObject extends JreJsonValue implements JsonObject {
     put(key, factory.create(value));
   }
 
-  public void put(String key, boolean bool) {
-    put(key, factory.create(bool));
+  public void put(String key, boolean bool_) {
+    put(key, factory.create(bool_));
   }
 
   @Override

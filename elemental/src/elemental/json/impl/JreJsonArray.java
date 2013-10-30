@@ -139,8 +139,8 @@ public class JreJsonArray extends JreJsonValue implements JsonArray {
     set(index, factory.create(number));
   }
 
-  public void set(int index, boolean bool) {
-    set(index, factory.create(bool));
+  public void set(int index, boolean bool_) {
+    set(index, factory.create(bool_));
   }
 
   public String toJson() {

@@ -26,8 +26,8 @@ public class Json {
     return instance().create(string);
   }
 
-  public static JsonBoolean create(boolean bool) {
-    return instance().create(bool);
+  public static JsonBoolean create(boolean bool_) {
+    return instance().create(bool_);
   }
 
   public static JsonArray createArray() {

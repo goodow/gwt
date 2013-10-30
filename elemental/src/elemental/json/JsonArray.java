@@ -83,7 +83,7 @@ public interface JsonArray extends JsonValue {
   /**
    * Set the value at index to be a boolean value.
    */
-  void set(int index, boolean bool);
+  void set(int index, boolean bool_);
   
   void insert(int index, JsonValue value);
 }

@@ -1,0 +1,3 @@
+[submodule "elemental/GDJson"]
+	path = elemental/GDJson
+	url = https://github.com/goodow/GDJson.git

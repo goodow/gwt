@@ -4,6 +4,7 @@
 include ../../../resources/make/common.mk
 
 MAIN_SRC_DIR = src
+ELEMENTAL_GEN_DIR = GDJson/Classes/generated/json
 MAIN_SOURCES = \
   $(MAIN_SRC_DIR)/elemental/json/Json.java \
   $(MAIN_SRC_DIR)/elemental/json/JsonArray.java \
@@ -29,37 +30,7 @@ MAIN_SOURCES = \
   $(MAIN_SRC_DIR)/elemental/json/impl/JsonObjectContext.java \
   $(MAIN_SRC_DIR)/elemental/json/impl/JsonTokenizer.java \
   $(MAIN_SRC_DIR)/elemental/json/impl/JsonUtil.java \
-  $(MAIN_SRC_DIR)/elemental/json/impl/JsonVisitor.java \
-  $(MAIN_SRC_DIR)/elemental/util/ArrayOf.java \
-  $(MAIN_SRC_DIR)/elemental/util/ArrayOfBoolean.java \
-  $(MAIN_SRC_DIR)/elemental/util/ArrayOfInt.java \
-  $(MAIN_SRC_DIR)/elemental/util/ArrayOfNumber.java \
-  $(MAIN_SRC_DIR)/elemental/util/ArrayOfString.java \
-  $(MAIN_SRC_DIR)/elemental/util/CanCompare.java \
-  $(MAIN_SRC_DIR)/elemental/util/CanCompareInt.java \
-  $(MAIN_SRC_DIR)/elemental/util/CanCompareNumber.java \
-  $(MAIN_SRC_DIR)/elemental/util/CanCompareString.java \
-  $(MAIN_SRC_DIR)/elemental/util/Collections.java \
-  $(MAIN_SRC_DIR)/elemental/util/Indexable.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromIntTo.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromIntToString.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromStringTo.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromStringToBoolean.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromStringToInt.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromStringToNumber.java \
-  $(MAIN_SRC_DIR)/elemental/util/MapFromStringToString.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreArrayOf.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreArrayOfBoolean.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreArrayOfInt.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreArrayOfNumber.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreArrayOfString.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromIntTo.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromIntToString.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromStringTo.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromStringToBoolean.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromStringToInt.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromStringToNumber.java \
-  $(MAIN_SRC_DIR)/elemental/util/impl/JreMapFromStringToString.java
+  $(MAIN_SRC_DIR)/elemental/json/impl/JsonVisitor.java
 MAIN_TEMP_SOURCES = $(subst $(MAIN_SRC_DIR), $(ELEMENTAL_GEN_DIR), $(MAIN_SOURCES))
 MAIN_GEN_SOURCES = $(MAIN_TEMP_SOURCES:.java=.m)
 MAIN_TEMP_SOURCES2 = $(subst $(MAIN_SRC_DIR), $(BUILD_DIR), $(MAIN_SOURCES))
@@ -96,6 +67,7 @@ link: translate $(SUPPORT_LIB)
 
 $(ELEMENTAL_GEN_DIR):
 	@mkdir -p $(ELEMENTAL_GEN_DIR)
+	@mkdir -p $(ELEMENTAL_GEN_DIR)/../include
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
 
